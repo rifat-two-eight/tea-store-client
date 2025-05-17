@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Swal from "sweetalert2";
 
 const Teas = ({ tea }) => {
@@ -42,9 +43,11 @@ const Teas = ({ tea }) => {
           <p>Quantity: {quantity}</p>
           <p>Price: {price}</p>
           <div className="card-actions">
-            <button className="px-3 py-2 bg-blue-500 hover:bg-blue-600 cursor-pointer text-white font-semibold rounded-lg">
-              View
-            </button>
+            <Link to={`teas/${_id}`}>
+              <button className="px-3 py-2 bg-blue-500 hover:bg-blue-600 cursor-pointer text-white font-semibold rounded-lg">
+                View
+              </button>
+            </Link>
             <button className="px-3 py-2 bg-green-500 hover:bg-green-600 cursor-pointer text-white font-semibold rounded-lg">
               Update
             </button>
