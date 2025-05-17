@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
-const Teas = ({ tea }) => {
+const Teas = ({ tea, teas, setTeas }) => {
   const { _id, name, quantity, price, photo } = tea;
 
   const handleDelete = (_id) => {
@@ -26,6 +26,9 @@ const Teas = ({ tea }) => {
                 text: "Your file has been deleted.",
                 icon: "success",
               });
+
+              const remaining = teas.filter((tea) => tea._id !== _id);
+              setTeas(remaining);
             }
           });
       }
@@ -48,9 +51,12 @@ const Teas = ({ tea }) => {
                 View
               </button>
             </Link>
-            <button className="px-3 py-2 bg-green-500 hover:bg-green-600 cursor-pointer text-white font-semibold rounded-lg">
-              Update
-            </button>
+            <Link to={`/update/${_id}`}>
+              {" "}
+              <button className="px-3 py-2 bg-green-500 hover:bg-green-600 cursor-pointer text-white font-semibold rounded-lg">
+                Update
+              </button>
+            </Link>
             <button
               onClick={() => handleDelete(_id)}
               className="px-3 py-2 bg-red-500 hover:bg-red-600 cursor-pointer text-white font-semibold rounded-lg"
