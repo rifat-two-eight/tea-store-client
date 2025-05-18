@@ -48,7 +48,7 @@ const Login = () => {
         className="w-[90%] sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[40%] mx-auto my-10 p-4 sm:p-6 bg-white shadow-md rounded-lg space-y-5"
       >
         <h2 className="text-xl sm:text-2xl font-semibold text-center text-gray-800">
-          Login to Your Account
+          -Login to Your Account-
         </h2>
 
         <div>
